@@ -488,7 +488,9 @@ section {
     padding: 60px 6%;
   }
   .hero {
+    min-height: auto;
     padding-top: 120px;
+    padding-bottom: 70px;
   }
   .nav {
     display: none;
