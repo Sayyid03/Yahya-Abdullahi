@@ -4,7 +4,8 @@ const body = document.querySelector("body");
 const icon = themeToggle.querySelector("i");
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
-const form = document.querySelector("contact-form");
+const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
+const form = document.querySelector(".contact-form");
 
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("light-mode");
@@ -21,7 +22,13 @@ themeToggle.addEventListener("click", () => {
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   mobileMenu.classList.toggle("active");
-  mainContent.classList.toggle("blur");
+});
+
+mobileMenuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  });
 });
 
 form.addEventListener("submit", (e) => {
