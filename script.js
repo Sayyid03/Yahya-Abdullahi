@@ -34,3 +34,10 @@ mobileMenuLinks.forEach((link) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 });
+
+window.addEventListener("click", (e) => {
+  if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+    hamburger.classList.remove("active");
+    mobileMenu.classList.remove("active");
+  }
+});
