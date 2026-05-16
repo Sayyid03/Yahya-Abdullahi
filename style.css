@@ -143,10 +143,31 @@ section {
 }
 .hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   align-items: center;
-  gap: 50px;
+  justify-content: center;
+  text-align: center;
+}
+.hero-buttons,
+.hero-stats {
+  justify-content: center;
+}
+
+.hero-text {
+  max-width: 850px;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero h1 {
