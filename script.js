@@ -6,6 +6,7 @@ const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileMenuLinks = document.querySelectorAll(".mobile-menu a");
 const form = document.querySelector(".contact-form");
+const popup = document.getElementById("success-popup");
 
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("light-mode");
@@ -31,8 +32,18 @@ mobileMenuLinks.forEach((link) => {
   });
 });
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("submit", () => {
+  setTimeout(() => {
+    form.reset();
+
+    // show popup
+    popup.style.display = "block";
+
+    // hide after 3 seconds
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 3000);
+  }, 500);
 });
 
 window.addEventListener("click", (e) => {
